@@ -1,29 +1,5 @@
-# PyCharm
+.pytest_cache
 .idea
-
-# Enviroments
+venv
 .venv
-.env
-venv/
-env/
-debug/
-#reports and allure
-allure_report
-allure_results
-allure-report
-allure-result
-# Byte-compiled / optimized / DLL files
-*__pycache__/
-*.py[cod]
-*$py.class
-*.рус
-*.html
-.pytest_cache/
-
-# Chrome
-chromedriver
-
-# Log
-*.gz
-*.tar.gz
-*.zip
+allure-results
