@@ -29,3 +29,13 @@ class CheckBoxLocators:
     CURRENT_SELECTED = 'svg[class="rct-icon rct-icon-check"]'
     ALL_FIELDS = '//span[@class="rct-title"]'
     TITLE_TEXT = './/ancestor::span[@class="rct-text"]'
+
+class RadioButtonLocators:
+    """
+    Class with locators on the radio buttons page
+    """
+    RADIO_BUTTON_LINK = 'https://demoqa.com/radio-button'
+    YES_BUTTON = '//label[@for="yesRadio"]'
+    IMPRESSIVE_BUTTON = '//label[@for="impressiveRadio"]'
+    NO_BUTTON = '//label[@for="noRadio"]'
+    SELECTED = '//span[@class="text-success"]'

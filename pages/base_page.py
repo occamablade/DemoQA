@@ -1,6 +1,7 @@
 """A base page class"""
+import logging
 
-from conf.conf import Timeouts
+logger = logging.getLogger(__name__)
 
 class BasePage:
     """
@@ -10,11 +11,7 @@ class BasePage:
     def __init__(self, driver, url):
         self.driver = driver
         self.url = url
-        self.driver.implicitly_wait(Timeouts.sec_5)
-
-    def get_url(self):
-        get_url = self.driver.current_url
-        return get_url
 
     def open(self):
+        logger.info(f'Open {self.url}')
         return self.driver.get(self.url)

@@ -9,7 +9,6 @@ from pages.base_page import BasePage
 logger = logging.getLogger(__name__)
 
 class TextBoxPage(BasePage):
-    locators = TextBoxLocators
 
     @allure.step('Fill all fields')
     def fill_all_fields(self):
@@ -43,5 +42,6 @@ class TextBoxPage(BasePage):
 
     @allure.step('Click submit button')
     def click_submit(self):
+        logger.info('Click submit button')
         btn = self.driver.find_element(By.XPATH, TextBoxLocators.BUTTON_SUBMIT)
         return btn.click()
