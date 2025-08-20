@@ -2,7 +2,7 @@
 
 class TextBoxLocators:
     """
-    Class with locators on the elements page
+    Class with locators on the text box page
     """
 
     TEXT_BOX_LINK = 'https://demoqa.com/text-box'
@@ -16,3 +16,16 @@ class TextBoxLocators:
     CUR_EMAIL = "//p[@id='email']"
     CUR_CURRENT_ADDRESS = "//p[@id='currentAddress']"
     CUR_PERMANENT_ADDRESS = "//p[@id='permanentAddress']"
+
+class CheckBoxLocators:
+    """
+    Class with locators on the checkbox page
+    """
+    CHECK_BOX_LINK = 'https://demoqa.com/checkbox'
+    EXPAND_ALL = '//button[@title="Expand all"]'
+    COLLAPSE_ALL = '//button[@title="Collapse all"]'
+    SELECT_ALL = '//span[@class="rct-checkbox"]'
+    SELECTED = '//span[@class="text-success"]'
+    CURRENT_SELECTED = 'svg[class="rct-icon rct-icon-check"]'
+    ALL_FIELDS = '//span[@class="rct-title"]'
+    TITLE_TEXT = './/ancestor::span[@class="rct-text"]'
