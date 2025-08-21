@@ -39,3 +39,24 @@ class RadioButtonLocators:
     IMPRESSIVE_BUTTON = '//label[@for="impressiveRadio"]'
     NO_BUTTON = '//label[@for="noRadio"]'
     SELECTED = '//span[@class="text-success"]'
+
+class WebTablesLocators:
+    """
+    Class with locators on the web tables page
+    """
+    WEB_TABLES_LINK = 'https://demoqa.com/webtables'
+    ADD_BTN = '//button[@id="addNewRecordButton"]'
+    FIRST_NAME = '//input[@id="firstName"]'
+    LAST_NAME = '//input[@id="lastName"]'
+    EMAIL = '//input[@id="userEmail"]'
+    AGE = '//input[@id="age"]'
+    SALARY = '//input[@id="salary"]'
+    DEPARTAMENT = '//input[@id="department"]'
+    SUBMIT_BTN = '//button[@id="submit"]'
+    CLOSE_REGISTRATION_BTN = '//button[@class="close"]'
+    DELETE_ROW_BTN = 'span[title="Delete"]'
+    PEOPLE_LIST = '//div[@class="rt-tr-group"]'
+    INPUT_SEARCH = 'input[id="searchBox"]'
+    ROW_PARENT = './/ancestor::div[@class="rt-tr-group"]'
+    EDIT_BTN = '//span[@title="Edit"]'
+    REGISTRATION_FORM_ALL_LINES = '.mr-sm-2.form-control'

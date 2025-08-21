@@ -18,7 +18,7 @@ def generated_person():
         first_name=faker_ru.first_name(),
         last_name=faker_ru.last_name(),
         age=random.randint(18, 80),
-        salary=random.randint(1000, 2000),
+        salary=random.randint(0, 1000000),
         department=faker_ru.job(),
         subject=faker_ru.job(),
     )
