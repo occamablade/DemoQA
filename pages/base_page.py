@@ -21,16 +21,11 @@ class BasePage:
         return self.driver.get(self.url)
 
     @allure.step('Action double click')
-    def mouse_double_click(self, element):
+    def action_double_click(self, element):
         logger.info('Double Click')
         return ActionChains(self.driver).double_click(element).perform()
 
     @allure.step('Action right click')
-    def mouse_right_click(self, element):
+    def action_right_click(self, element):
         logger.info('Right Click')
         return ActionChains(self.driver).context_click(element).perform()
-
-    @allure.step('Action one click')
-    def mouse_click(self, element):
-        logger.info('Click')
-        return ActionChains(self.driver).click(element).perform()

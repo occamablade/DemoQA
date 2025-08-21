@@ -64,9 +64,9 @@ class ButtonLocators:
     Class with locators on the button page
     """
     BUTTON_LINK = 'https://demoqa.com/buttons'
-    DOUBLE_CLICK_BTN = '//button[@id="doubleClickBtn"]'
-    RIGHT_CLICK_BTN = '//button[@id="rightClickBtn"]'
-    CLICK_BTN = '//button[@id="4ZHrV"]'
-    DOUBLE_CLICK_MESSAGE = '//p[@id="doubleClickMessage"]'
-    RIGHT_MESSAGE = '//p[@id="rightClickMessage"]'
-    CLICK_ME_MESSAGE = '//p[@id="dynamicClickMessage"]'
+    DOUBLE_CLICK_BTN = 'button[id="doubleClickBtn"]'
+    RIGHT_CLICK_BTN = 'button[id="rightClickBtn"]'
+    CLICK_BTN = '//button[. = "Click Me"]'
+    DOUBLE_CLICK_MESSAGE = 'p[id="doubleClickMessage"]'
+    RIGHT_MESSAGE = 'p[id="rightClickMessage"]'
+    CLICK_ME_MESSAGE = 'p[id="dynamicClickMessage"]'
