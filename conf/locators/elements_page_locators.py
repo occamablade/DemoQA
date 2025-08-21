@@ -57,6 +57,16 @@ class WebTablesLocators:
     DELETE_ROW_BTN = 'span[title="Delete"]'
     PEOPLE_LIST = '//div[@class="rt-tr-group"]'
     INPUT_SEARCH = 'input[id="searchBox"]'
-    ROW_PARENT = './/ancestor::div[@class="rt-tr-group"]'
     EDIT_BTN = '//span[@title="Edit"]'
-    REGISTRATION_FORM_ALL_LINES = '.mr-sm-2.form-control'
+
+class ButtonLocators:
+    """
+    Class with locators on the button page
+    """
+    BUTTON_LINK = 'https://demoqa.com/buttons'
+    DOUBLE_CLICK_BTN = '//button[@id="doubleClickBtn"]'
+    RIGHT_CLICK_BTN = '//button[@id="rightClickBtn"]'
+    CLICK_BTN = '//button[@id="4ZHrV"]'
+    DOUBLE_CLICK_MESSAGE = '//p[@id="doubleClickMessage"]'
+    RIGHT_MESSAGE = '//p[@id="rightClickMessage"]'
+    CLICK_ME_MESSAGE = '//p[@id="dynamicClickMessage"]'
