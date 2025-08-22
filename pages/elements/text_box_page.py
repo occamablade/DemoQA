@@ -3,7 +3,7 @@ import logging
 from selenium.webdriver.common.by import By
 
 from conf.locators.elements_page_locators import TextBoxLocators
-from generator.generator import generated_person
+from generator.generator import generate_person
 from pages.base_page import BasePage
 
 logger = logging.getLogger(__name__)
@@ -12,7 +12,7 @@ class TextBoxPage(BasePage):
 
     @allure.step('Fill all fields')
     def fill_all_fields(self):
-        person_info = next(generated_person())
+        person_info = next(generate_person())
 
         full_name = self.driver.find_element(By.XPATH, TextBoxLocators.FULL_NAME)
         full_name.send_keys(person_info.full_name)

@@ -3,7 +3,7 @@ import logging
 from selenium.webdriver.common.by import By
 
 from conf.locators.elements_page_locators import WebTablesLocators
-from generator.generator import generated_person
+from generator.generator import generate_person
 from pages.base_page import BasePage
 
 logger = logging.getLogger(__name__)
@@ -24,7 +24,7 @@ class WebTablesPage(BasePage):
 
     @allure.step('Create new person')
     def create_new_person(self):
-        person_info = next(generated_person())
+        person_info = next(generate_person())
         first_name = person_info.first_name
         last_name = person_info.last_name
         email = person_info.email
@@ -59,7 +59,7 @@ class WebTablesPage(BasePage):
         return self.driver.find_element(By.CSS_SELECTOR, WebTablesLocators.INPUT_SEARCH).send_keys(key_word)
 
     def update_person_info(self):
-        person_info = next(generated_person())
+        person_info = next(generate_person())
         first_name = person_info.first_name
         last_name = person_info.last_name
         email = person_info.email

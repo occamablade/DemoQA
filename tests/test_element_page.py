@@ -7,12 +7,14 @@ import pytest
 
 from conf.conf import CodeStatus
 from conf.locators.elements_page_locators import TextBoxLocators, CheckBoxLocators, RadioButtonLocators, \
-    WebTablesLocators, ButtonLocators, LinkLocators
+    WebTablesLocators, ButtonLocators, LinkLocators, UploadDownloadLocators, DynamicPropertiesLocators
 from pages.elements.button_page import ButtonPage
 from pages.elements.check_box_page import CheckBoxPage
+from pages.elements.dynamic_properties_page import DynamicPropertiesPage
 from pages.elements.links_page import LinkPage
 from pages.elements.radio_button_page import RadioButtonPage
 from pages.elements.text_box_page import TextBoxPage
+from pages.elements.upload_download_page import UploadDownloadPage
 from pages.elements.web_tables_page import WebTablesPage
 
 logger = logging.getLogger(__name__)
@@ -129,6 +131,7 @@ class TestElementsPage:
     @allure.epic('Link page')
     class TestLinkPage:
 
+        @allure.feature('Check api call')
         @pytest.mark.parametrize('link', ['Created', 'No Content', 'Moved', 'Bad Request',
                                           'Unauthorized', 'Forbidden', 'Not Found'])
         def test_api_call(self, driver, link):
@@ -137,3 +140,45 @@ class TestElementsPage:
             code, text = link_page.send_and_check(link=link)
             assert code == CodeStatus.codes[link]['code'], f'Response code {code} is not coded'
             assert text == CodeStatus.codes[link]['text'], f'Response text {text} is not coded'
+
+    @allure.epic('Upload and download page')
+    class TestUploadDownloadPage:
+
+        @allure.feature('Upload test')
+        def test_upload(self, driver):
+            upload_download_page = UploadDownloadPage(driver, UploadDownloadLocators.UPLOAD_DOWNLOAD_LINK)
+            upload_download_page.open()
+            file_name, result = upload_download_page.upload_file()
+            assert file_name == result, 'The name of the uploaded file does not match the result'
+
+        @allure.feature('download test')
+        def test_download(self, driver):
+            upload_download_page = UploadDownloadPage(driver, UploadDownloadLocators.UPLOAD_DOWNLOAD_LINK)
+            upload_download_page.open()
+            result = upload_download_page.download_file()
+            assert result is True, 'The file has not been downloaded'
+
+    @allure.epic('Dynamic properties page')
+    class TestDynamicPropertiesPage:
+
+        @allure.feature('Check enable button')
+        def test_enable_btn(self, driver):
+            dynamic_properties_page = DynamicPropertiesPage(driver, DynamicPropertiesLocators.DYNAMIN_PROPERTY_LINK)
+            dynamic_properties_page.open()
+            enable = dynamic_properties_page.check_enable_button()
+            assert enable is True, 'Button did not enable after 10 seconds'
+
+        @allure.feature('Check dynamic properties change color')
+        @pytest.mark.xfail
+        def test_dynamic_properties_change_color(self, driver):
+            dynamic_properties_page = DynamicPropertiesPage(driver, DynamicPropertiesLocators.DYNAMIN_PROPERTY_LINK)
+            dynamic_properties_page.open()
+            color_before, color_after = dynamic_properties_page.check_changed_of_color()
+            assert color_before != color_after, 'Button color has not changed'
+
+        @allure.feature('Check appear button')
+        def test_appear_button(self, driver):
+            dynamic_properties_page = DynamicPropertiesPage(driver, DynamicPropertiesLocators.DYNAMIN_PROPERTY_LINK)
+            dynamic_properties_page.open()
+            appear = dynamic_properties_page.check_appear_button()
+            assert appear is True, 'Button did not appear after 5 seconds'

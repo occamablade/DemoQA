@@ -1,4 +1,6 @@
 """Module with locators on the elements page"""
+from selenium.webdriver.common.by import By
+
 
 class TextBoxLocators:
     """
@@ -86,3 +88,15 @@ class LinkLocators:
     NOT_FOUND = '//a[@id="invalid-url"]'
     RESPONSE_CODE = '//*[@id="linkResponse"]/b[1]'
     RESPONSE_TEXT = '//*[@id="linkResponse"]/b[2]'
+
+class UploadDownloadLocators:
+    UPLOAD_DOWNLOAD_LINK = 'https://demoqa.com/upload-download'
+    DOWNLOAD_BTN = '//a[@id="downloadButton"]'
+    UPLOAD_BTN = '//input[@id="uploadFile"]'
+    RESULT_UPLOADED_BTN = '//p[@id="uploadedFilePath"]'
+
+class DynamicPropertiesLocators:
+    DYNAMIN_PROPERTY_LINK = 'https://demoqa.com/dynamic-properties'
+    COLOR_CHANGE_BTN = (By.XPATH, '//button[@id="colorChange"]')
+    VISIBLE_AFTER_BTN = (By.XPATH, '//button[@id="visibleAfter"]')
+    ENABLE_AFTER_BTN = (By.XPATH, '//button[@id="enableAfter"]')
