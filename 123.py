@@ -22,7 +22,23 @@
 #
 # driver.quit()
 
-aa= ['Всеволод', 'Беспалова', 63, 'rostislav55@example.com', 930310, 'Футуролог']
-bb = [['Всеволод', 'Беспалова', '63', 'rostislav55@example.com', '930310', 'Футуролог'], ['Alden', 'Cantrell', '45', 'alden@example.com', '12000', 'Compliance'], ['Kierra', 'Gentry', '29', 'kierra@example.com', '2000', 'Legal']]
-if aa in bb:
-    print('a')
+class CodeStatus:
+
+    codes = {
+        'Created': {'code': '201',
+                    'text': 'Created'},
+        'No Content': {'code': '204',
+                       'text': 'No Content'},
+        'Moved': {'code': '301',
+                  'text': 'Moved Permanently'},
+        'Bad Request': {'code': '400',
+                        'text': 'Bad Request'},
+        'Unauthorized': {'code': '401',
+                         'text': 'Unauthorized'},
+        'Forbidden': {'code': '403',
+                      'text': 'Forbidden'},
+        'Not Found': {'code': '404',
+                      'text': 'Not Found'},
+    }
+
+print(CodeStatus.codes['Created'])

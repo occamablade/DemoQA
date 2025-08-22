@@ -5,10 +5,12 @@ import logging
 
 import pytest
 
+from conf.conf import CodeStatus
 from conf.locators.elements_page_locators import TextBoxLocators, CheckBoxLocators, RadioButtonLocators, \
-    WebTablesLocators, ButtonLocators
+    WebTablesLocators, ButtonLocators, LinkLocators
 from pages.elements.button_page import ButtonPage
 from pages.elements.check_box_page import CheckBoxPage
+from pages.elements.links_page import LinkPage
 from pages.elements.radio_button_page import RadioButtonPage
 from pages.elements.text_box_page import TextBoxPage
 from pages.elements.web_tables_page import WebTablesPage
@@ -123,3 +125,15 @@ class TestElementsPage:
             button_page.open()
             assert button_page.click_and_check(type_click=type_click) == f'You have done a {type_click} click', \
                 f'{type_click} was not pressed'
+
+    @allure.epic('Link page')
+    class TestLinkPage:
+
+        @pytest.mark.parametrize('link', ['Created', 'No Content', 'Moved', 'Bad Request',
+                                          'Unauthorized', 'Forbidden', 'Not Found'])
+        def test_api_call(self, driver, link):
+            link_page = LinkPage(driver, LinkLocators.LINK_LINK)
+            link_page.open()
+            code, text = link_page.send_and_check(link=link)
+            assert code == CodeStatus.codes[link]['code'], f'Response code {code} is not coded'
+            assert text == CodeStatus.codes[link]['text'], f'Response text {text} is not coded'

@@ -27,3 +27,22 @@ class Person:
 
     subject: str = None
     phone: str = None
+
+class CodeStatus:
+
+    codes = {
+        'Created': {'code': '201',
+                    'text': 'Created'},
+        'No Content': {'code': '204',
+                       'text': 'No Content'},
+        'Moved': {'code': '301',
+                  'text': 'Moved Permanently'},
+        'Bad Request': {'code': '400',
+                        'text': 'Bad Request'},
+        'Unauthorized': {'code': '401',
+                         'text': 'Unauthorized'},
+        'Forbidden': {'code': '403',
+                      'text': 'Forbidden'},
+        'Not Found': {'code': '404',
+                      'text': 'Not Found'},
+    }

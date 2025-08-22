@@ -70,3 +70,19 @@ class ButtonLocators:
     DOUBLE_CLICK_MESSAGE = 'p[id="doubleClickMessage"]'
     RIGHT_MESSAGE = 'p[id="rightClickMessage"]'
     CLICK_ME_MESSAGE = 'p[id="dynamicClickMessage"]'
+
+class LinkLocators:
+    """
+    Class with locators on the link page
+    """
+    LINK_LINK = 'https://demoqa.com/links'
+    HOME = '//a[.="Home"]'
+    BAD_REQUEST = '//a[@id="bad-request"]'
+    CREATED = '//a[@id="created"]'
+    NO_CONTENT = '//a[@id="no-content"]'
+    MOVED = '//a[@id="moved"]'
+    UNAUTHORIZED = '//a[@id="unauthorized"]'
+    FORBIDDEN = '//a[@id="forbidden"]'
+    NOT_FOUND = '//a[@id="invalid-url"]'
+    RESPONSE_CODE = '//*[@id="linkResponse"]/b[1]'
+    RESPONSE_TEXT = '//*[@id="linkResponse"]/b[2]'
