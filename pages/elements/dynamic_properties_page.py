@@ -1,6 +1,9 @@
+"""Module with method for dynamic properties page"""
+
 import logging
 import time
 
+import allure
 from selenium.common import TimeoutException
 
 
@@ -11,7 +14,11 @@ from pages.base_page import BasePage
 logger = logging.getLogger(__name__)
 
 class DynamicPropertiesPage(BasePage):
+    """A class to dynamic properties page"""
+
     locators = DynamicPropertiesLocators()
+
+    @allure.step('Check enable button')
     def check_enable_button(self):
         try:
             logger.info('Checking if an element is enable')
@@ -20,6 +27,7 @@ class DynamicPropertiesPage(BasePage):
             return False
         return True
 
+    @allure.step('Check appear button')
     def check_appear_button(self):
         try:
             logger.info('Checking if an element is visible')
@@ -28,6 +36,7 @@ class DynamicPropertiesPage(BasePage):
             return False
         return True
 
+    @allure.step('Check changed of color')
     def check_changed_of_color(self):
         color_button = self.element_is_present(self.locators.COLOR_CHANGE_BTN)
         color_button_before = color_button.value_of_css_property('color')

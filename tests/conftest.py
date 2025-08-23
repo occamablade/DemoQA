@@ -1,3 +1,5 @@
+"""Module with fixtures"""
+
 import logging
 
 import pytest
@@ -10,6 +12,10 @@ logger = logging.getLogger(__name__)
 
 @pytest.fixture
 def driver():
+    """
+    Fixture start driver session
+    :return: driver
+    """
     logger.warning('Start new session driver')
     options = Options()
     # options.add_argument('--headless')

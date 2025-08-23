@@ -1,3 +1,5 @@
+"""Module with methods for web tables page"""
+
 import allure
 import logging
 from selenium.webdriver.common.by import By
@@ -9,6 +11,7 @@ from pages.base_page import BasePage
 logger = logging.getLogger(__name__)
 
 class WebTablesPage(BasePage):
+    """A class to web tables page"""
 
     @allure.step('Click on "Add" button')
     def click_add_btn(self):
@@ -55,7 +58,7 @@ class WebTablesPage(BasePage):
                 data.append(item.text.splitlines())
         return 'Data not found' if len(data) == 0 else data
 
-    def search_some_person(self, key_word):
+    def search_some_person(self, key_word: str):
         return self.driver.find_element(By.CSS_SELECTOR, WebTablesLocators.INPUT_SEARCH).send_keys(key_word)
 
     def update_person_info(self):

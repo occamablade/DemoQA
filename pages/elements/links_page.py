@@ -1,4 +1,7 @@
+"""Module with method for links page"""
+
 import logging
+from typing import Any
 
 import allure
 from selenium.webdriver.common.by import By
@@ -9,6 +12,7 @@ from pages.base_page import BasePage
 logger = logging.getLogger(__name__)
 
 class LinkPage(BasePage):
+    """A class with methods for links page"""
 
     def get_created_link(self):
         return self.driver.find_element(By.XPATH, LinkLocators.CREATED)
@@ -66,13 +70,15 @@ class LinkPage(BasePage):
         logger.info('Click not found link')
         return self.get_not_found_link().click()
 
+    @allure.step('Get response code')
     def get_response_code(self):
         return self.driver.find_element(By.XPATH, LinkLocators.RESPONSE_CODE).text
 
+    @allure.step('Get response text')
     def get_response_text(self):
         return self.driver.find_element(By.XPATH, LinkLocators.RESPONSE_TEXT).text
 
-    def send_and_check(self, link):
+    def send_and_check(self, link: str) -> tuple[Any, Any]:
         if link == 'Created':
             self.click_created_link()
         elif link == 'No Content':

@@ -1,3 +1,5 @@
+"""A module with methods for radio button page"""
+
 import allure
 import logging
 from selenium.webdriver.common.by import By
@@ -8,6 +10,7 @@ from pages.base_page import BasePage
 logger = logging.getLogger(__name__)
 
 class RadioButtonPage(BasePage):
+    """A class with methods for radio button page"""
 
     @allure.step('Click valid radio button choice')
     def click_valid(self, choice):

@@ -1,3 +1,5 @@
+"""Moduel with method for button page"""
+
 import logging
 
 import allure
@@ -9,6 +11,7 @@ from pages.base_page import BasePage
 logger = logging.getLogger(__name__)
 
 class ButtonPage(BasePage):
+    """A class button page"""
 
     @allure.step('Click')
     def click_and_check(self, type_click):

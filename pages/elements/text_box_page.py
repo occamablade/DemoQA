@@ -1,3 +1,5 @@
+"""Module with method for text box page"""
+
 import allure
 import logging
 from selenium.webdriver.common.by import By
@@ -9,6 +11,8 @@ from pages.base_page import BasePage
 logger = logging.getLogger(__name__)
 
 class TextBoxPage(BasePage):
+    """A class to test text box page"""
+
 
     @allure.step('Fill all fields')
     def fill_all_fields(self):

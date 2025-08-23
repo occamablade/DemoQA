@@ -1,3 +1,5 @@
+"""Moduel with method for checkbox page"""
+
 import random
 
 import allure
@@ -10,6 +12,7 @@ from pages.base_page import BasePage
 logger = logging.getLogger(__name__)
 
 class CheckBoxPage(BasePage):
+    """A class to checkbox page"""
 
     @allure.step('Expand all fields')
     def expand_all(self):

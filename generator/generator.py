@@ -3,9 +3,10 @@ import logging
 import random
 from pathlib import Path
 
+import allure
 from faker import Faker
 
-from conf.conf import Person
+from conf.conf import Person, Subjects
 
 RANDOM_FILE = Path(__file__).parent
 faker_ru = Faker('ru_RU')
@@ -13,6 +14,8 @@ Faker.seed()
 
 logger = logging.getLogger(__name__)
 
+
+@allure.step('Generate person')
 def generate_person():
     """Method that generates a person"""
     yield Person(
@@ -28,8 +31,12 @@ def generate_person():
         subject=faker_ru.job(),
     )
 
-
+@allure.step('Generate file')
 def generate_file():
+    """
+    Method that generates a file
+    :return: filename and path
+    """
     path = rf'{RANDOM_FILE}\File{random.randint(0, 1000)}.txt'
     file = open(path, 'w+')
     file.write(f'Hello World {random.randint(0, 1000)}')
@@ -38,3 +45,15 @@ def generate_file():
     file_name = file_name[-1]
     logger.info(f'File generated: {file_name}')
     return file_name, path
+
+@allure.step('Generate subjects')
+def generate_subject():
+    """
+    Method that generates a subject
+    :return: list of subjects
+    """
+    data = []
+    count = random.randint(1, len(Subjects.subjects))
+    for i in range(count):
+        data.append(Subjects.subjects[i])
+    return data

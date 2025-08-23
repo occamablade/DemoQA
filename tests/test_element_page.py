@@ -1,3 +1,6 @@
+"""Module with test for element page"""
+
+
 import random
 
 import allure
@@ -26,7 +29,6 @@ class TestElementsPage:
     class TestTextBox:
 
         @allure.feature('Text Box')
-        @allure.step('Check Text Box')
         def test_text_box(self, driver):
             text_box_page = TextBoxPage(driver, TextBoxLocators.TEXT_BOX_LINK)
             text_box_page.open()
@@ -39,7 +41,6 @@ class TestElementsPage:
     class TestCheckBox:
 
         @allure.feature('Check Box')
-        @allure.step('Check Box')
         def test_check_box(self, driver):
             check_box_page = CheckBoxPage(driver, CheckBoxLocators.CHECK_BOX_LINK)
             check_box_page.open()

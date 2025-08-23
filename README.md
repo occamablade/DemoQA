@@ -2,7 +2,7 @@
 
 <!-- Stek -->
 
-## User stek 
+## Used stek 
 <p  align="center">
   <code><img width="10%" title="Python" src="conf/img/python.png"></code>
   <code><img width="10%" title="Pytest" src="conf/img/pytest.png"></code>
@@ -45,7 +45,7 @@
    ```
 
 ### In the [Elements](https://demoqa.com/elements) section automated next pages: 
-- Text Box
+-  Text Box
 -  Check Box
 -  Radio Button
 -  Web Tables
@@ -56,8 +56,11 @@
 
 ### In the [Forms](https://demoqa.com/forms) section automated next pages:
 
-[//]: # ()
-[//]: # (- Registration Form)
+
+- ### Registration Form:
+  - The data is generated using **Faker**
+  - All data choiced and generated randomly
+  - Picture is loaded from the folder `conf\img\me.pmg`
 
 
 ### In the [Alerts, Frame & Windows](https://demoqa.com/alertsWindows) section automated next pages:

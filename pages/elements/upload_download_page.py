@@ -1,3 +1,5 @@
+"""Module with method for upload and download page"""
+
 import base64
 import logging
 import os
@@ -13,6 +15,7 @@ from pages.base_page import BasePage
 logger = logging.getLogger(__name__)
 
 class UploadDownloadPage(BasePage):
+    """A class to upload and download page"""
 
     @allure.step('Upload file')
     def upload_file(self):
