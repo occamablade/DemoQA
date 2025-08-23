@@ -4,3 +4,6 @@ venv
 .venv
 allure-results
 123.py
+*.pyc
+*/.pytest_cache
+__pycache__/
