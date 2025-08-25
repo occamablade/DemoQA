@@ -65,19 +65,11 @@
 
 ### In the [Alerts, Frame & Windows](https://demoqa.com/alertsWindows) section automated next pages:
 
-[//]: # (- Browser Windows)
-
-[//]: # ()
-[//]: # (- Alerts)
-
-[//]: # ()
-[//]: # (- Frames)
-
-[//]: # ()
-[//]: # (- Nested Frames)
-
-[//]: # ()
-[//]: # (- Modal Dialogs)
+- Browser Windows
+- Alerts
+- Frames
+- Nested Frames
+- Modal Dialogs
 
 
 ### In the [Widgets](https://demoqa.com/widgets) section automated next pages:
