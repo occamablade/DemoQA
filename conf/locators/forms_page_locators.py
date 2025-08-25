@@ -1,5 +1,4 @@
 """Module with locators on the forms page"""
-import random
 
 from selenium.webdriver.common.by import By
 

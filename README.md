@@ -74,7 +74,7 @@
 
 ### In the [Widgets](https://demoqa.com/widgets) section automated next pages:
 
-[//]: # (- Accordian)
+- Accordian
 
 [//]: # ()
 [//]: # (- Auto Complete)
