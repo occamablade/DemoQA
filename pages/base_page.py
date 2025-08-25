@@ -50,3 +50,19 @@ class BasePage:
 
     def go_to_element(self, element):
         return self.driver.execute_script("arguments[0].scrollIntoView();", element)
+
+    @allure.step('Go to new tab')
+    def go_to_a_new_tab(self):
+        return self.driver.switch_to.window(self.driver.window_handles[1])
+
+    @allure.step('Go to alert')
+    def go_to_alert(self):
+        return self.driver.switch_to.alert
+
+    @allure.step('Go to frame')
+    def go_to_frame(self, element):
+        self.driver.switch_to.frame(element)
+
+    @allure.step('Switch to default content')
+    def switch_to_default_content(self):
+        self.driver.switch_to.default_content()
