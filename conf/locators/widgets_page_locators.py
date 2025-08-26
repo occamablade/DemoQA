@@ -21,3 +21,24 @@ class AutoCompleteLocators:
     INPUT_SINGLE = (By.XPATH, '//input[@id="autoCompleteSingleInput"]')
     LIST_MULTI_VALUE = (By.XPATH, '//div[@class="css-1rhbuit-multiValue auto-complete__multi-value"]')
     SINGLE_CONTAINER = (By.XPATH, '//div[@class="auto-complete__single-value css-1uccc91-singleValue"]')
+
+class DatePickerLocators:
+    """
+    Class with locators on the date picker page
+    """
+    DATE_PICKER_LINK = 'https://demoqa.com/date-picker'
+    DATE_INPUT = (By.XPATH, '//input[@id="datePickerMonthYearInput"]')
+
+    MONTHS_OPTIONS = (By.CSS_SELECTOR, '.react-datepicker__month-option')
+    YEAR_OPTION = (By.CSS_SELECTOR, '.react-datepicker__year-option')
+
+    DATE_TIME_INPUT = (By.XPATH, '//input[@id="dateAndTimePickerInput"]')
+    DATE_TIME_MONTH = (By.CLASS_NAME, 'react-datepicker__month-read-view')
+    DATE_TIME_YEAR = (By.CSS_SELECTOR, '.react-datepicker__year-read-view')
+    DATE_TIME_TIME = (By.CSS_SELECTOR, '.react-datepicker__time-list-item')
+
+    MONTH = (By.CSS_SELECTOR, '.react-datepicker__month-select')
+    YEAR = (By.CSS_SELECTOR, '.react-datepicker__year-select')
+    DAY = "//div[contains(@class, 'react-datepicker__day') and not(contains(@class, 'outside-month')) and text()='{}']"
+
+    DAY_SELECTED = (By.XPATH, "//div[contains(@class, 'react-datepicker__day') and not(contains(@class, 'outside-month'))]")

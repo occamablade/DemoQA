@@ -5,7 +5,6 @@ import random
 
 import allure
 from selenium.webdriver import Keys
-from selenium.webdriver.common.by import By
 
 from conf.conf import Colors
 from conf.locators.widgets_page_locators import AutoCompleteLocators

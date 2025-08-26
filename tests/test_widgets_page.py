@@ -3,9 +3,10 @@ import logging
 import allure
 import pytest
 from deepdiff import DeepDiff
-from conf.locators.widgets_page_locators import AutoCompleteLocators, AccordianLocators
+from conf.locators.widgets_page_locators import AutoCompleteLocators, AccordianLocators, DatePickerLocators
 from pages.widgets.accordian import AccordianPage
 from pages.widgets.auto_complete import AutoCompletePage
+from pages.widgets.date_picker import DatePickerPage
 
 logger = logging.getLogger(__name__)
 
@@ -41,3 +42,22 @@ class TestWidgetsPage:
             input_colors = auto_complete.set_single_color()
             get_colors = auto_complete.get_single_color()
             assert input_colors == get_colors, f'Color not same, differense {DeepDiff(input_colors, get_colors)}'
+
+    @allure.epic('Test Date Picker')
+    class TestDatePicker:
+
+        @allure.feature('Testing Select Date')
+        def test_select_date(self, driver):
+            date_picker = DatePickerPage(driver, DatePickerLocators.DATE_PICKER_LINK)
+            date_picker.open()
+            input_date = date_picker.select_date()
+            get_data = date_picker.get_date()
+            assert input_date == get_data, 'Date not same'
+
+        @allure.feature('Testing Select Date and Time')
+        def test_select_date_time(self, driver):
+            date_picker = DatePickerPage(driver, DatePickerLocators.DATE_PICKER_LINK)
+            date_picker.open()
+            input_date = date_picker.select_date_time()
+            get_data = date_picker.get_date_time()
+            assert input_date == get_data, 'Date and time not same'

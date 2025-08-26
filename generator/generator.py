@@ -65,3 +65,15 @@ def generate_color(count: int) -> set[str]:
     :return: random color
     """
     return set(random.choices(Colors.colors, k=count))
+
+@allure.step('Generate random time in 15 minuts interval')
+def generate_time() -> list[str]:
+    """
+    Method that generates a random time in 15 minuts interval
+    :return:
+    """
+    hours = random.randint(0, 23)
+    minutes = random.choice([0, 15, 30, 45])
+    if hours >= 12:
+        return [f"{hours:02d}:{minutes:02d}", 'PM']
+    return [f"{hours:02d}:{minutes:02d}", 'AM']
