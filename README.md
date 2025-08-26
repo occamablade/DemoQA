@@ -75,9 +75,7 @@
 ### In the [Widgets](https://demoqa.com/widgets) section automated next pages:
 
 - Accordian
-
-[//]: # ()
-[//]: # (- Auto Complete)
+- Auto Complete
 
 [//]: # ()
 [//]: # (- Date Picker)

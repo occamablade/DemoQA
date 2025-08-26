@@ -6,7 +6,7 @@ from pathlib import Path
 import allure
 from faker import Faker
 
-from conf.conf import Person, Subjects
+from conf.conf import Person, Subjects, Colors
 
 RANDOM_FILE = Path(__file__).parent
 faker_ru = Faker('ru_RU')
@@ -57,3 +57,11 @@ def generate_subject():
     for i in range(count):
         data.append(Subjects.subjects[i])
     return data
+
+@allure.step('Generate random color')
+def generate_color(count: int) -> set[str]:
+    """
+    Method that generates a random color
+    :return: random color
+    """
+    return set(random.choices(Colors.colors, k=count))

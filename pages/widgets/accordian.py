@@ -1,7 +1,6 @@
 """Module with method for widgets page"""
 
 import logging
-import time
 
 import allure
 from selenium.webdriver.common.by import By

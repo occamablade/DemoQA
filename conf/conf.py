@@ -89,3 +89,9 @@ class Months:
               '9': 'October',
               '10': 'November',
               '11': 'December'}
+
+class Colors:
+    """A class with colors data"""
+
+    colors = ['Aqua', 'Yellow', 'White', 'Red', 'Blue', 'Green',
+              'Purple', 'Voilet', 'Magenta', 'Indigo', 'Black']
