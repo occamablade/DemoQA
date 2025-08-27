@@ -42,3 +42,11 @@ class DatePickerLocators:
     DAY = "//div[contains(@class, 'react-datepicker__day') and not(contains(@class, 'outside-month')) and text()='{}']"
 
     DAY_SELECTED = (By.XPATH, "//div[contains(@class, 'react-datepicker__day') and not(contains(@class, 'outside-month'))]")
+
+class SliderLocators:
+    """
+    Class with locators on the slider page
+    """
+    SLIDER_LINK = 'https://demoqa.com/slider'
+    SLIDER = (By.ID, "sliderValue")
+    SLIDER_VALUE_BOX = (By.CSS_SELECTOR, "#sliderValue")

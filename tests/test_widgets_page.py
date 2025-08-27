@@ -3,10 +3,12 @@ import logging
 import allure
 import pytest
 from deepdiff import DeepDiff
-from conf.locators.widgets_page_locators import AutoCompleteLocators, AccordianLocators, DatePickerLocators
+from conf.locators.widgets_page_locators import AutoCompleteLocators, AccordianLocators, DatePickerLocators, \
+    SliderLocators
 from pages.widgets.accordian import AccordianPage
 from pages.widgets.auto_complete import AutoCompletePage
 from pages.widgets.date_picker import DatePickerPage
+from pages.widgets.slider import SliderPage
 
 logger = logging.getLogger(__name__)
 
@@ -61,3 +63,14 @@ class TestWidgetsPage:
             input_date = date_picker.select_date_time()
             get_data = date_picker.get_date_time()
             assert input_date == get_data, 'Date and time not same'
+
+    @allure.epic('Test Slider')
+    class TestSlider:
+
+        @pytest.mark.parametrize('move', ['0', '25', '50', '75', '100'])
+        @allure.feature('Testing Slider')
+        def test_slider(self, driver, move):
+            slider = SliderPage(driver, SliderLocators.SLIDER_LINK)
+            slider.open()
+            slider.set_slider_value(move)
+            assert slider.get_slider_value() == move, 'Slider value not same'
