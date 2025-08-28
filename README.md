@@ -79,9 +79,7 @@
 - Date Picker
 - Slider
 - Progress Bar
-
-[//]: # ()
-[//]: # (- Tabs)
+- Tabs
 
 [//]: # ()
 [//]: # (- Tool Tips)
