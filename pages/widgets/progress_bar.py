@@ -3,7 +3,6 @@
 import logging
 
 import allure
-from selenium.common import TimeoutException
 
 from conf.locators.widgets_page_locators import ProgressBarLocators
 from pages.base_page import BasePage

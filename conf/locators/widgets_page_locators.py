@@ -59,3 +59,15 @@ class ProgressBarLocators:
     START_STOP_BTN = (By.ID, "startStopButton")
     PROGRESS_BAR = (By.ID, "progressBar")
     RESET_BTN = (By.ID, "resetButton")
+
+class TabsLocators:
+    """
+    Class with locators on the tabs page
+    """
+    TABS_LINK = 'https://demoqa.com/tabs'
+    TABS = {'What': {'locator': (By.ID, 'demo-tab-what'),
+                     'text': (By.ID, 'demo-tabpane-what')},
+            'Origin': {'locator': (By.ID, 'demo-tab-origin'),
+                       'text': (By.ID, 'demo-tabpane-origin')},
+            'Use': {'locator': (By.ID, 'demo-tab-use'),
+                    'text': (By.ID, 'demo-tabpane-use')}}

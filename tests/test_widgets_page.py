@@ -4,12 +4,13 @@ import allure
 import pytest
 from deepdiff import DeepDiff
 from conf.locators.widgets_page_locators import AutoCompleteLocators, AccordianLocators, DatePickerLocators, \
-    SliderLocators, ProgressBarLocators
+    SliderLocators, ProgressBarLocators, TabsLocators
 from pages.widgets.accordian import AccordianPage
 from pages.widgets.auto_complete import AutoCompletePage
 from pages.widgets.date_picker import DatePickerPage
 from pages.widgets.progress_bar import ProgressBarPage
 from pages.widgets.slider import SliderPage
+from pages.widgets.tabs import TabsPage
 
 logger = logging.getLogger(__name__)
 
@@ -87,3 +88,19 @@ class TestWidgetsPage:
             progress_bar.start_progress()
             val = progress_bar.get_progress_value(move)
             assert val == move, 'Progress bar value not same'
+
+    @allure.epic('Test Tabs')
+    class TestTabs:
+
+        @pytest.mark.parametrize('tab, expected_text', [
+            ('What', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'),
+            ('Origin', 'Contrary to popular belief, Lorem Ipsum is not simply random text.'),
+            ('Use', 'It is a long established fact that a reader will be distracted by'
+                    ' the readable content of a page when looking at its layout.')
+        ])
+        @allure.feature('Testing tabs')
+        def test_tabs(self, driver, tab, expected_text):
+            tabs = TabsPage(driver, TabsLocators.TABS_LINK)
+            tabs.open()
+            tabs.click_tab(tab_name=tab)
+            assert expected_text in tabs.get_text(tab_name=tab), 'Texts do not match'
