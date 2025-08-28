@@ -50,3 +50,12 @@ class SliderLocators:
     SLIDER_LINK = 'https://demoqa.com/slider'
     SLIDER = (By.ID, "sliderValue")
     SLIDER_VALUE_BOX = (By.CSS_SELECTOR, "#sliderValue")
+
+class ProgressBarLocators:
+    """
+    Class with locators on the progress bar page
+    """
+    PROGRESS_BAR_LINK = 'https://demoqa.com/progress-bar'
+    START_STOP_BTN = (By.ID, "startStopButton")
+    PROGRESS_BAR = (By.ID, "progressBar")
+    RESET_BTN = (By.ID, "resetButton")

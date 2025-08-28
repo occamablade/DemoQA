@@ -4,10 +4,11 @@ import allure
 import pytest
 from deepdiff import DeepDiff
 from conf.locators.widgets_page_locators import AutoCompleteLocators, AccordianLocators, DatePickerLocators, \
-    SliderLocators
+    SliderLocators, ProgressBarLocators
 from pages.widgets.accordian import AccordianPage
 from pages.widgets.auto_complete import AutoCompletePage
 from pages.widgets.date_picker import DatePickerPage
+from pages.widgets.progress_bar import ProgressBarPage
 from pages.widgets.slider import SliderPage
 
 logger = logging.getLogger(__name__)
@@ -74,3 +75,15 @@ class TestWidgetsPage:
             slider.open()
             slider.set_slider_value(move)
             assert slider.get_slider_value() == move, 'Slider value not same'
+
+    @allure.epic('Test Progress Bar')
+    class TestProgressBar:
+
+        @pytest.mark.parametrize('move', ['1', '25', '50', '75', '99'])
+        @allure.feature('Testing progress bar move')
+        def test_progress_bar(self, driver, move):
+            progress_bar = ProgressBarPage(driver, ProgressBarLocators.PROGRESS_BAR_LINK)
+            progress_bar.open()
+            progress_bar.start_progress()
+            val = progress_bar.get_progress_value(move)
+            assert val == move, 'Progress bar value not same'

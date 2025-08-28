@@ -19,6 +19,7 @@ class BasePage:
     def __init__(self, driver, url):
         self.driver = driver
         self.url = url
+        self.wait = wait(self.driver, Timeouts.sec_10, 1)
 
     @allure.step('Open new url')
     def open(self):

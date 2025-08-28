@@ -77,9 +77,7 @@
 - Accordian
 - Auto Complete
 - Date Picker
-
-[//]: # ()
-[//]: # (- Slider)
+- Slider
 
 [//]: # ()
 [//]: # (- Progress Bar)
