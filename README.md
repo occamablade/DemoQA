@@ -78,9 +78,7 @@
 - Auto Complete
 - Date Picker
 - Slider
-
-[//]: # ()
-[//]: # (- Progress Bar)
+- Progress Bar
 
 [//]: # ()
 [//]: # (- Tabs)
