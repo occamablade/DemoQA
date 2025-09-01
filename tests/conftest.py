@@ -19,6 +19,7 @@ def driver():
     logger.warning('Start new session driver')
     options = Options()
     options.add_argument('--headless')
+    chrome_options.add_argument("--no-sandbox")
     driver = webdriver.Chrome(options=options)
     driver.implicitly_wait(Timeouts.sec_5)
     driver.maximize_window()
